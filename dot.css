@@ -1,0 +1,21 @@
+.dot {
+    width:      100px;
+    height:     100px;
+    background: orange;
+    border-radius: 50px;
+    position: absolute;
+}
+
+.centered {
+    position: absolute;
+    top:  50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.movable {}
+
+#dot1 {
+    top: 200px;
+    left: 100px;
+}
