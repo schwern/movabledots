@@ -1,4 +1,6 @@
-var MovableClass = "movable";
+"use strict";
+
+let MovableClass = "movable";
 
 function getRandomBetween(min, max) {
     return Math.floor(Math.random() * (max-min)) + min;
@@ -10,9 +12,9 @@ function moveDot() {
 }
 
 function init() {
-    var movableNodes = document.getElementsByClassName(MovableClass);
-    for( i = 0; i < movableNodes.length; i++ ) {
-        var node = movableNodes[i];
+    let movableNodes = document.getElementsByClassName(MovableClass);
+    for( let i = 0; i < movableNodes.length; i++ ) {
+        let node = movableNodes[i];
         node.onclick = moveDot;
     }
 }
