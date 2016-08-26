@@ -10,13 +10,13 @@ describe("getRandomBetween()", function() {
         }
     });
 
-    it("min/max equal", function() {
+    it("is ok when min & max are equal", function() {
         let num = getRandomBetween(10, 10);
 
         expect(num).toEqual(10);
     });
 
-    it("min > max", function() {
+    it("throws when min > max", function() {
         var err = function() {
             getRandomBetween(1, 0);
         };
@@ -25,3 +25,30 @@ describe("getRandomBetween()", function() {
     });
 });
 
+
+describe("moveDot()", function() {
+    it("sets top and left", function() {
+        var node = document.createElement("div");
+        node.appendChild(document.createTextNode("foo"));
+        document.body.appendChild(node);
+
+        node.style.top  = "-10px";
+        node.style.left = "-20px";
+
+        moveDot.apply(node);
+
+        // Get the number without the px.
+        var firstNumRe = /^-?\d+/;
+        var top  = firstNumRe.exec(node.style.top)[0];
+        var left = firstNumRe.exec(node.style.left)[0];
+        
+        expect(top).toBeGreaterThan(-1);
+        expect(left).toBeGreaterThan(-1);
+
+        expect(top).toBeLessThan( window.innerHeight );
+        expect(left).toBeLessThan( window.innerWidth );
+
+        expect(top).toBeLessThan( window.innerHeight - node.clientHeight );
+        expect(left).toBeLessThan( window.innerWidth - node.clientWidth );
+    });
+});

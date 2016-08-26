@@ -10,8 +10,8 @@ function getRandomBetween(min, max) {
 }
 
 function moveDot() {
-    this.style.top  = getRandomBetween(0, window.innerHeight - this.clientHeight);
-    this.style.left = getRandomBetween(0, window.innerWidth  - this.clientWidth);
+    this.style.top  = getRandomBetween(0, window.innerHeight - this.clientHeight) + "px";
+    this.style.left = getRandomBetween(0, window.innerWidth  - this.clientWidth)  + "px";
 }
 
 function init() {
