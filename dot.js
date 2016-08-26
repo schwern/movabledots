@@ -3,6 +3,9 @@
 let MovableClass = "movable";
 
 function getRandomBetween(min, max) {
+    if( min > max ) {
+        throw TypeError("min > max");
+    }
     return Math.floor(Math.random() * (max-min)) + min;
 }
 
